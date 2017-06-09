@@ -26,48 +26,57 @@ var localizacion = function (ubicacion) {
     iniciarMapa(miUbicacion)
 };
 
+var filtrarRestaurantes = function (e) {
+	e.preventDefault();
+	var criterioBusqueda = $("#search").val().toLowerCase();
+	var restaurantesFiltrados = restaurantes.filter(function (lugar) {
+		return lugar.nombre.toLowerCase().indexOf(criterioBusqueda) >= 0;
+	});
+	mostrarRestaurantes(restaurantesFiltrados);
+};
+
 var restaurantes = [
     {
     "foto":"img/papaguapa.jpg",
     "nombre":"Papa Guapa",
     "direccion":"Av Oaxaca 81, Roma Nte., 06700 Ciudad de México, CDMX",
     "comida":"mexicana",
-    "coordenadas":{"lat":"19.4190628","lng":"-99.1672538"}  
+    "coordenadas":{"lat":"19.418992","lng":"-99.166953"}  
     },
     { 
     "foto":"img/rosetta.jpg",
     "nombre":"Panadería Rosetta",
     "direccion":"Colima 179, Cuauhtémoc, Roma Nte., 06700 Ciudad de México, CDMX",
     "comida":"francesa",
-    "coordenadas":{"lat": "19.4197389","lng": "-99.162994" }  
+    "coordenadas":{"lat":"19.419889","lng":"-99.160533"}  
     },
     { 
     "foto":"img/chomp.jpg",
     "nombre":"Chomp Chomp",
     "direccion":"Calle Tonalá 91, Col.Roma Norte, Roma Nte., 06700 Cuauhtémoc, CDMX",
     "comida":"mexicana",
-    "coordenadas":{"lat": "19.41782","lng":"-99.163737"}   
+    "coordenadas":{"lat": "19.417133","lng":"-99.162583"}   
     },
     {
     "foto":"img/mapokalbi.jpg",
     "nombre":"Mapo Kal Bi",
-    "direccion":"Calle Liverpool, Juárez, 06600 Ciudad de México, CDMX",
+    "direccion":"Calle Liverpool 185, Juárez, 06600 Ciudad de México, CDMX",
     "comida":"koreana",
-    "coordenadas":{"lat": "19.4216954","lng":"-99.1655395"}  
+    "coordenadas":{"lat": "19.423179","lng":"-99.166774"}  
     },
     { 
     "foto":"img/bisquets.jpg",
     "nombre":"Bisquets Obregon",
     "direccion":"Av. Álvaro Obregón 252, Roma Nte., 06700 Ciudad de México, CDMX",
     "comida":"mexicana",
-    "coordenadas":{"lat":"19.4163842" ,"lng":"-99.1659813"}   
+    "coordenadas":{"lat":"19.416658" ,"lng":"-99.166692"}   
     },
     { 
     "foto":"img/wingstone.jpg",
     "nombre":"Wingstone",
     "direccion":"Av. Álvaro Obregón, Roma Nte., 06700 Ciudad de México, CDMX",
     "comida":"rapida",
-    "coordenadas":{"lat":"19.4172974" ,"lng":"-99.165"}   
+    "coordenadas":{"lat":"19.416770" ,"lng":"-99.165481"}   
     }    
 ];
 
